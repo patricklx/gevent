@@ -706,6 +706,9 @@ class callback(object):
     def __nonzero__(self):
         # it's nonzero if it's pending or currently executing
         return self.args is not None
+        
+    def __bool__(self):
+        return self.__nonzero__()
 
     @property
     def pending(self):
